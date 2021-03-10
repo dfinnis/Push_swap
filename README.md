@@ -2,8 +2,8 @@
 
 The goal of [this project](https://github.com/dfinnis/Push_swap/blob/master/subject.pdf) is to create:
 
-* *push_swap*, A bespoke sorting algorithm which accepts integers as argument and prints how to sort them.
-* *checker*, checks the output of *push_swap* sorts correctly.
+* **push_swap**, A bespoke sorting algorithm which accepts integers as argument and prints how to sort them.
+* **checker**, checks the output of *push_swap* sorts correctly.
 
 Final Score 121/100
 
@@ -18,9 +18,17 @@ Make the binaries *push_swap* & *checker*.
 
 ```make```
 
-Then run ........???????????????????????????????
+Then run *push_swap* with integers as argument, *push_swap* prints a list of operations to sort the numbers. Pipe *push_swap* output into *checker*, provide the same numbers as argument, *checker* prints OK if the numbers are sorted correctly.
 
-```./???????????????????????????????????????```
+```ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker $ARG```
+
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/simple.png" width="70%">
+
+Alternatively, run with this handy ruby shuffle, which tests 5 numbers like above but in a random order.
+
+```ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG```
+
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/shuffle.png" width="100%">
 
 
 ## Stacks
@@ -33,12 +41,12 @@ Initially:
 
 The goal is to have all numbers sorted in stack *a*.
 
-
-## Operations
-
 The stacks are circular, so coded as circular doubly linked lists.
 
-This game requires a bespoke sorting algorithm because of the limited operations:
+This game also requires a bespoke sorting algorithm because you are only allowed to use the following operations.
+
+
+## Operations
 
 **Rotate** stacks, changing which element is at the "top" of the stack.
 
@@ -61,11 +69,40 @@ This game requires a bespoke sorting algorithm because of the limited operations
 * `ss` : sa and sb at the same time.
 
 
-## 
+## push_swap
+
+*push_swap* takes integers as argument, and prints a list of operations to sort the numbers.
+
+```ARG="1 5 2 4 3"; ./push_swap $ARG```
+
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/push_swap.png" width="70%">
+
+* Flag *-f file_name*, write instructions to file_name, instead of default stdout.
+
+```ARG="1 5 2 4 3"; ./push_swap -f solution $ARG; cat solution```
 
 
+## checker
+
+*checker* expects numbers as arguments in the same format as *push_swap*. *checker* then waits to receive operations on stdin, one operation per line.
+
+In the following example, we provide numbers 2, 1 then 3 as argument, then operation *sa* to stdin. Finally press *ctrl + d* to end stdin input.
+
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/checker.png" width="45%">
 
 
+* Flags *-v* visualizer, *-c* colour last operation, & *-t* slow visualizer
+
+```ARG=`ruby -e "puts (1..12).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker -c -t $ARG```
+
+![visualizer](https://github.com/dfinnis/Push_swap/blob/master/img/visualizer.gif)
+
+
+* Flag *-f file_name*, read instructions from file_name, instead of default stdin.
+
+```ARG=`ruby -e "puts (1..12).to_a.shuffle.join(' ')"`; ./push_swap -f solution $ARG ; ./checker -f solution $ARG```
+
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/f.png" width="100%">
 
 
 ## Tests
