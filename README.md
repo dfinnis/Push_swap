@@ -39,7 +39,7 @@ Initially:
 * *a* contains the numbers input as argument (unsorted).
 * *b* is empty
 
-The goal is to have all numbers sorted in stack *a*.
+The goal is to have all numbers sorted in stack *a*. Shorter solutions (less operations) are better.
 
 The stacks are circular, so coded as circular doubly linked lists.
 
@@ -75,7 +75,7 @@ This game also requires a bespoke sorting algorithm because you are only allowed
 
 ```ARG="1 5 2 4 3"; ./push_swap $ARG```
 
-<img src="https://github.com/dfinnis/Push_swap/blob/master/img/push_swap.png" width="70%">
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/push_swap.png" width="55%">
 
 * Flag *-f file_name*, write instructions to file_name, instead of default stdout.
 
@@ -88,7 +88,7 @@ This game also requires a bespoke sorting algorithm because you are only allowed
 
 In the following example, we provide numbers 2, 1 then 3 as argument, then operation *sa* to stdin. Finally press *ctrl + d* to end stdin input.
 
-<img src="https://github.com/dfinnis/Push_swap/blob/master/img/checker.png" width="45%">
+<img src="https://github.com/dfinnis/Push_swap/blob/master/img/checker.png" width="40%">
 
 
 * Flags *-v* visualizer, *-c* colour last operation, & *-t* slow visualizer
@@ -105,9 +105,28 @@ In the following example, we provide numbers 2, 1 then 3 as argument, then opera
 <img src="https://github.com/dfinnis/Push_swap/blob/master/img/f.png" width="100%">
 
 
+## Sorting algo
+
+For less than 100 numbers, the stack is initially divided in 3 according to value: top, middle and bottom third.
+We start by rotating through the whole of stack *a* and pushing to *b* the top third (the largest numbers).
+Then we look for min and max in *b*, and push back to *a* the least 'expensive' one.
+Once we have organized the top third back in *a*, we repeat the process with the middle and bottom thirds.
+
+For over 100 numbers, we intially divide the stack into 7 parts. Several other optimizations exploit all allowed moves to reduce solution length.
+
+Here is a visualization of our solving algo, [visualiser by o-reo](https://github.com/o-reo/push_swap_visualizer).
+
+![algo](https://github.com/dfinnis/Push_swap/blob/master/img/visualizer2.gif)
+
+
 ## Tests
 
+I wrote test_performance.sh to test randomly sorted lists of numbers 5, 100 and 500 long.
+
+```./test_performance.sh```
+
 <img src="https://github.com/dfinnis/Push_swap/blob/master/img/test.png" width="45%">
+
 
 ## Team
 
