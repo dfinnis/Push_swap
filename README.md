@@ -121,7 +121,7 @@ Here is a visualization of our solving algo, [visualiser by o-reo](https://githu
 
 ## Tests
 
-I wrote test_performance.sh to test randomly sorted lists of numbers 5, 100 and 500 long.
+I wrote test_performance.sh to test randomly shuffled lists of 5, 100 and 500 numbers long.
 
 ```./test_performance.sh```
 
