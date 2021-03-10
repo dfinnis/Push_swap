@@ -43,10 +43,10 @@ The goal is to have all numbers sorted in stack *a*. Shorter solutions (less ope
 
 The stacks are circular, so coded as circular doubly linked lists.
 
-This game also requires a bespoke sorting algorithm because you are only allowed to use the following operations.
-
 
 ## Operations
+
+You are only allowed to use the following operations:
 
 **Rotate** stacks, changing which element is at the "top" of the stack.
 
@@ -114,6 +114,8 @@ Read instructions from file_name, instead of default stdin.
 
 
 ## Sorting algo
+
+This game requires a bespoke sorting algorithm to suit the stack layout and limited operations.
 
 For less than 100 numbers, the stack is initially divided in 3 according to value: top, middle and bottom third.
 We start by rotating through the whole of stack *a* and pushing to *b* the top third (the largest numbers).
