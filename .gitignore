@@ -2,3 +2,7 @@ a.out
 *.gch
 .DS_Store
 author
+*.o
+*.a
+checker
+push_swap
