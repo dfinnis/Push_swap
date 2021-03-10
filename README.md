@@ -100,7 +100,7 @@ In the following example, we provide numbers 2, 1 then 3 as argument, then opera
 
 * Flag *-f file_name*, read instructions from file_name, instead of default stdin.
 
-```ARG=`ruby -e "puts (1..12).to_a.shuffle.join(' ')"`; ./push_swap -f solution $ARG ; ./checker -f solution $ARG```
+```ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap -f solution $ARG ; ./checker -f solution $ARG```
 
 <img src="https://github.com/dfinnis/Push_swap/blob/master/img/f.png" width="100%">
 
