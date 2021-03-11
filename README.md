@@ -115,7 +115,7 @@ Read instructions from file_name, instead of default stdin.
 
 ## Sorting algo
 
-This game requires a bespoke sorting algorithm to suit the stack layout and limited operations.
+This game requires a bespoke sorting algorithm to suit the stack structure and limited operations.
 
 For less than 100 numbers, the stack is initially divided in 3 according to value: top, middle and bottom third.
 We start by rotating through the whole of stack *a* and pushing to *b* the top third (the largest numbers).
