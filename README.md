@@ -2,8 +2,8 @@
 
 The goal of [this project](https://github.com/dfinnis/Push_swap/blob/master/subject.pdf) is to create:
 
-* **push_swap**, A bespoke sorting algorithm which accepts integers as argument and prints how to sort them.
-* **checker**, checks the output of *push_swap* sorts correctly.
+* **push_swap** - A bespoke sorting algorithm which accepts integers as argument and prints how to sort them.
+* **checker** - Checks the output of *push_swap* sorts correctly.
 
 Final Score 121/100
 
