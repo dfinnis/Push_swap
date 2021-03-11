@@ -86,7 +86,7 @@ Write instructions to file_name, instead of default stdout.
 
 ## checker
 
-*checker* expects numbers as arguments in the same format as *push_swap*. *checker* then waits to receive operations on stdin, one operation per line.
+*checker* expects numbers as arguments in the same format as *push_swap*. *checker* then waits to receive operations on stdin, one operation per line. *checker* performs the given operations on the given numbers, then prints "OK" if the numbers are sorted correctly, "KO" if not sorted.
 
 In the following example, we provide numbers 2, 1 then 3 as argument, then operation *sa* to stdin. Finally press *ctrl + d* to end stdin input.
 
