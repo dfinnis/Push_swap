@@ -16,14 +16,12 @@ First clone this repo. <br>
 Make the binaries *push_swap* & *checker*. <br>
 ```make```
 
-Then run *push_swap* with integers as argument, *push_swap* prints a list of operations to sort the numbers. Pipe *push_swap* output into *checker*, provide the same numbers as argument, *checker* prints OK if the numbers are sorted correctly.
-
+Then run *push_swap* with integers as argument, *push_swap* prints a list of operations to sort the numbers. Pipe *push_swap* output into *checker*, provide the same numbers as argument, *checker* prints OK if the numbers are sorted correctly. <br>
 ```ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker $ARG```
 
 <img src="https://github.com/dfinnis/Push_swap/blob/master/img/simple.png" width="70%">
 
-Alternatively, run with this handy ruby shuffle, which tests 5 numbers like above but in a random order.
-
+Alternatively, run with this handy ruby shuffle, which tests 5 numbers like above but in a random order. <br>
 ```ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG```
 
 <img src="https://github.com/dfinnis/Push_swap/blob/master/img/shuffle.png" width="100%">
