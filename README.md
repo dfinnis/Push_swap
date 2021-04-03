@@ -7,7 +7,7 @@ The goal of this project was to create:
 
 See the [subject](https://github.com/dfinnis/Push_swap/blob/master/subject.pdf) for more details.
 
-Final Score 121/100
+*Final Score 121/100*
 
 
 ## Getting Started
